@@ -1,11 +1,24 @@
 #user-menu {
     width: 292px;
     height: 100%;
-    background-color: #efefef;
+    background-color: white;
 }
 
 #timeline {
     width: 900px;
     height: 100%;
-    background-color: #efefef;
+    background-color: white;
+}
+
+#home-links {
+    width: 100%;
+    height: calc(100vh - 280px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#home-links div {
+    width: 100%;
+    text-align: center;
 }

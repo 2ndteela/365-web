@@ -2,13 +2,14 @@
   primary  : #FF3B3F  Red
   light    : #EFEFEF  Grey
   darker   : #A9A9A9  Grey
-  lightblue: #CAEBF2  Blue
+  lightblue: #79e2fa  Blue
 
 
 */
 body {
   margin: 0;
   padding: 0;
+  background-color: #EFEFEF;
 }
 
 body * {
@@ -26,6 +27,14 @@ h1 {
   font-size: 46px;
   margin: 0 0 23px 0;
   }
+
+h2 {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  line-height: 46px;
+  font-size: 32px;
+  margin: 0 0 23px 0;
+}
   
 p {
   font-family: 'Josefin Sans', sans-serif;
@@ -34,6 +43,16 @@ p {
   line-height: 23px;
   margin: 0 0 23px 0;
   }
+
+a {
+  text-decoration: none;
+  color: #79e2fa;
+  transition: .2s;
+}
+
+a:hover {
+  color: deepskyblue;
+}
 
 .App {
   width: 100vw;
