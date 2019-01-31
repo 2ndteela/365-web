@@ -1,0 +1,10 @@
+.post-container {
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.post-container h3 {
+}

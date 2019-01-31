@@ -5,14 +5,14 @@
 }
 
 #timeline {
-    width: 900px;
+    width: 724px;
     height: 100%;
     background-color: white;
 }
 
 #home-links {
     width: 100%;
-    height: calc(100vh - 280px);
+    height: 40vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -21,4 +21,14 @@
 #home-links div {
     width: 100%;
     text-align: center;
+}
+
+#timeline-header {
+    width: 100%;
+    padding: 16px;
+}
+#posts {
+    width: 100%;
+    padding: 0 16px;
+    overflow-y: auto;
 }

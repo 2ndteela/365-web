@@ -1,15 +1,98 @@
 import React, { Component } from 'react'
-import MaterialIcon, {colorPalette} from 'material-icons-react'
+import MaterialIcon from 'material-icons-react'
 import {Link} from 'react-router-dom'
+import { createMuiTheme } from '@material-ui/core/styles';
+import Post from '../../comp/Post/post' ;
 
 import './style.css'
+import { FormControl, InputLabel, Select, Button, Input, MenuItem, OutlinedInput } from '@material-ui/core';
+
+const theme = createMuiTheme({
+    palette: {
+      primary: { main:'#FF3B3F' },
+      secondary: {
+        main: '#f44336',
+      },
+    }, 
+})
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            filter: 'Newest',
+            posts: [
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+                {
+                    user: 'Test',
+                    time: '15 mins',
+                    description: 'Spot needs some walkies',
+                    pay: '$50'
+                },
+            ]
+         }
     }
+
+    updateValue(e, data) {
+        this.setState({
+            [data] : e.target.value
+        })
+    }
+
     render() { 
         return ( 
             <div style={{height: '100%'}}>
@@ -30,7 +113,29 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div id="timeline" className="col-flex"></div>
+                    <div id="timeline" className="col-flex">
+                        <div id="timeline-header" className="row-flex" style={{justifyContent: 'space-between'}}>
+                            <Button variant="contained" color="primary" >New Sitter Request</Button>
+                                <FormControl variant="outlined">
+                                    <InputLabel htmlFor="filter-simple">Sort:</InputLabel>
+                                    <Select
+                                        value={this.state.filter}
+                                        onChange={(e) => this.updateValue(e, 'filter')}
+                                        input = {
+                                            <OutlinedInput name="filter" id="filter-simple"></OutlinedInput>
+                                        }
+                                    >
+                                        <MenuItem value="Newest">Newest</MenuItem>
+                                        <MenuItem value="Paid">Paid</MenuItem>
+                                    </Select>
+                                </FormControl>
+                        </div>
+                        <div id="posts">
+                            {this.state.posts.map(p => (
+                                <Post postData={p}></Post>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
          );
