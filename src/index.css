@@ -1,3 +1,11 @@
+/* 
+  primary  : #FF3B3F  Red
+  light    : #EFEFEF  Grey
+  darker   : #A9A9A9  Grey
+  lightblue: #CAEBF2  Blue
+
+
+*/
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +18,62 @@ body * {
   font-family: monospace;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  line-height: 46px;
+  font-size: 46px;
+  margin: 0 0 23px 0;
+  }
+  
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+  margin: 0 0 23px 0;
+  }
+
+.App {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+#page-content {
+  width: 1200px;
+  height: calc(100vh - 84px);
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+#header {
+  background-color: #FF3B3F;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+#header-content {
+  width: 1200px;
+  color: white;
+}
+
+#header-content h1 {
+  margin: 0;
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
