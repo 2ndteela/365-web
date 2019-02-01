@@ -91,6 +91,7 @@ class Account extends Component {
                                     </div>
                                 </div>
                                 <div className="row-flex notif-pets">
+                                <p>Select which notifications you want</p>
                                     <FormControlLabel control={
                                         <Checkbox name="dog-notifications" />
                                     } label="Dogs" />

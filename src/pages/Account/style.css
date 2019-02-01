@@ -23,15 +23,16 @@
 
 #account-info-listing{
     justify-content: left;
-    align-items: left;
     flex-direction: column;
+    widows: 100%;
 }
 .info-divs {
-    width: 70%;
+    width: 500px;
     padding: 16px;
 }
 .notifications{
-    width: 30%;
+    width: 200px;
+    flex-direction: column;
 }
 ul {
     list-style-type: none;
@@ -39,8 +40,10 @@ ul {
 .notif-pets{
     flex-direction: column;
     background-color: lightblue;
+    width: 100%;
 }
 .email-phone{
     flex-direction: column;
     background-color: antiquewhite;
+    width: 100%
 }
