@@ -4,7 +4,6 @@ import Home from './pages/Home/'
 import Account from './pages/Account'
 import Messages from './pages/Messages'
 import Pets from  './pages/Pets'
-import { createMuiTheme } from '@material-ui/core/styles';
 
 class App extends Component {
   render() {

@@ -10,13 +10,15 @@ body {
   margin: 0;
   padding: 0;
   background-color: #EFEFEF;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 body * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
 
 
@@ -99,4 +101,80 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+button {
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: white;
+  transition: .2s;
+  padding: 16px !important;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+.primary-button {
+  border-color: #FF3B3F;
+  color: #FF3B3F;
+}
+
+.primary-button:hover {
+  background-color: #FF3B3F;
+  color: white;
+}
+
+.secondary-button {
+  border-color: #79e2fa;
+  color: #79e2fa;
+}
+
+.secondary-button:hover {
+  color: white;
+  background-color: #79e2fa;
+}
+
+select {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 0 18px;
+}
+
+.styled-input {
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+.styled-input input {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.styled-input div {
+  padding-top: 4px;
+  color: #a9a9a9;
+  font-weight: 300 !important; 
+  font-size: 14px;
+}
+
+.styled-textfield {
+  width: 100%;
+}
+
+.styled-textfield textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  height: 300px;
+  resize: none;
+}
+
+.styled-textfield div {
+  color: #a9a9a9;
+  padding-top: 2px;
+  font-weight: 300 !important;
+  font-size: 14px;
 }

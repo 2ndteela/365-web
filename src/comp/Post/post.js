@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MaterialIcon from 'material-icons-react'
 import './style.css'
 
 class Post extends Component {
@@ -10,7 +9,7 @@ class Post extends Component {
     render() { 
         return ( 
             <div className="post-container row-flex">
-                <div style={{backgroundColor: '#EFEFEF', height: '64px', width: '64px', borderRadius: '32px', marginRight: '16px'}}></div>
+                <div style={{backgroundColor: '#EFEFEF', height: '64px', width: '64px', borderRadius: '36px', marginRight: '16px'}}></div>
                 <div style={{width: '100%'}} >
                     <h3>{this.props.postData.user}</h3>
                     <div>{this.props.postData.description}</div>

@@ -7,8 +7,9 @@
 #account-info {
     width: 724px;
     height: 100%;
-    padding: 16px;
     background-color: white;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #home-links div {
