@@ -1,0 +1,46 @@
+#user-menu {
+    width: 292px;
+    height: 100%;
+    background-color: white;
+}
+
+#account-info {
+    width: 724px;
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+}
+
+#home-links div {
+    width: 100%;
+    text-align: center;
+}
+
+#account-info-header {
+    width: 100%;
+    padding: 16px;
+}
+
+#account-info-listing{
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+}
+.info-divs {
+    width: 70%;
+    padding: 16px;
+}
+.notifications{
+    width: 30%;
+}
+ul {
+    list-style-type: none;
+}
+.notif-pets{
+    flex-direction: column;
+    background-color: lightblue;
+}
+.email-phone{
+    flex-direction: column;
+    background-color: antiquewhite;
+}
