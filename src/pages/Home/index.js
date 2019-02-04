@@ -90,7 +90,7 @@ class Home extends Component {
                     </div>
                     <div id="timeline" className="col-flex">
                         <div id="timeline-header" className="row-flex" style={{justifyContent: 'space-between'}}>
-                            <button className="secondary-button">New Sitter Request</button>
+                            <button className="primary-button">New Sitter Request</button>
                                 <select>
                                     <option value="Newest" >Newest</option>
                                     <option value="Nearest" >Nearest</option>
