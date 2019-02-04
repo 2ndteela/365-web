@@ -1,8 +1,7 @@
-#user-menu {
-    width: 292px;
-    height: 100%;
-    background-color: white;
+#messages-menu {
+    background: white;
     margin-right: 8px;
+    width: 292px;
 }
 
 #back-home {

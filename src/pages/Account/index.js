@@ -14,21 +14,7 @@ class Account extends Component {
             <div style={{ height: '100%' }}>
                 <div className="row-flex" style={{ justifyContent: 'space-between', height: '100%' }}>
                     <div className="col-flex" id="user-menu">
-                        <MaterialIcon icon="account_circle" size={280} ></MaterialIcon>
-                        <div id="home-links" className="col-flex">
-                            <div>
-                                <button className="primary-button">Change Profile Picture</button>
-                                <div>
-                                    <Link to="/"><h2>Home</h2></Link>
-                                </div>
-                                <div>
-                                    <Link to="/pets"><h2>Manage Pets</h2></Link>
-                                </div>
-                                <div>
-                                    <Link to="/messages"><h2>Chats</h2></Link>
-                                </div>
-                            </div>
-                        </div>
+                        <MaterialIcon icon="account_circle" size={140} ></MaterialIcon>
                     </div>
                     <div id="account-info" className="col-flex">
                         <div className="info-divs col-flex">

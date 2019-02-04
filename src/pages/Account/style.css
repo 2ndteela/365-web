@@ -1,11 +1,5 @@
-#user-menu {
-    width: 292px;
-    height: 100%;
-    background-color: white;
-}
-
 #account-info {
-    width: 724px;
+    width: 900px;
     height: 100%;
     background-color: white;
     justify-content: flex-start;
@@ -28,7 +22,7 @@
     widows: 100%;
 }
 .info-divs {
-    width: 500px;
+    width: 600px;
     padding: 16px;
 }
 .notifications{

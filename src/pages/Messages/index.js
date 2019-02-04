@@ -12,7 +12,7 @@ class Messages extends Component {
     render() { 
         return ( 
         <div style={{height: '100%'}} className="row-flex">
-            <div id="user-menu">
+            <div id="messages-menu">
                 <div id="back-home">
                     <Link to="/" >Home</Link>
                 </div>

@@ -86,20 +86,7 @@ class Home extends Component {
             <div style={{height: '100%'}}>
                 <div className="row-flex" style={{justifyContent: 'space-between', height: '100%'}}>
                     <div className="col-flex" id="user-menu">
-                        <MaterialIcon icon="account_circle" size={280} ></MaterialIcon>
-                        <div id="home-links" className="col-flex">
-                            <div>
-                                <div>
-                                    <Link to="/pets"><h2>Manage Pets</h2></Link>
-                                </div>
-                                <div>
-                                    <Link to="/account"><h2>Manage Account</h2></Link>
-                                </div>
-                                <div>
-                                    <Link to="/messages"><h2>Chats</h2></Link>
-                                </div>
-                            </div>
-                        </div>
+                        <MaterialIcon icon="account_circle" size={140} ></MaterialIcon>
                     </div>
                     <div id="timeline" className="col-flex">
                         <div id="timeline-header" className="row-flex" style={{justifyContent: 'space-between'}}>

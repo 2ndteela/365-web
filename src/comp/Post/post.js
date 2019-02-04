@@ -16,8 +16,8 @@ class Post extends Component {
                     <div className="row-flex" style={{marginTop:'4px', color: '#a9a9a9', justifyContent: 'space-between', width: '100%'}}>
                         <span>{this.props.postData.time}</span>
                         <div>
-                            <span style={{paddingRight: '36px', color:'#79e2fa'}}>Accept Job</span>
-                            <span style={{color:'#79e2fa'}} >Send Message</span>
+                            <span style={{paddingRight: '36px', color:'#A32629'}}>Accept Job</span>
+                            <span style={{color:'#A32629'}} >Send Message</span>
                         </div>
                     </div>
                 </div>
