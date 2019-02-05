@@ -7,6 +7,12 @@
 
 
 */
+
+:root {
+  --primary: #2de1fc;
+  --secondary: #0075F2;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -67,7 +73,7 @@ a {
 
 #header-content a:hover {
   background-color: white;
-  color: #FF3B3F;
+  color: var(--primary);
 }
 
 .App {
@@ -89,7 +95,7 @@ a {
 }
 
 #header {
-  background-color: #FF3B3F;
+  background-color: var(--primary);
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -130,23 +136,23 @@ button:hover {
 }
 
 .primary-button {
-  border-color: #FF3B3F;
-  color: #FF3B3F;
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .primary-button:hover {
-  background-color: #FF3B3F;
-  color: white;
+  background-color: var(--primary);
+  color:white;
 }
 
 .secondary-button {
-  border-color: #A32629;
-  color: #A32629;
+  border-color: var(--secondary);
+  color: var(--secondary);
 }
 
 .secondary-button:hover {
   color: white;
-  background-color: #A32629;
+  background-color:var(--secondary);
 }
 
 select {
