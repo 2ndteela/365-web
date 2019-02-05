@@ -14,8 +14,10 @@ class App extends Component {
           <div id="router-div">
             <div id="header">
               <div id="header-content">
-                <Link to="/"><img src={logo} alt="Logo" /></Link>
-                <h1>Sitter Space</h1>
+                <div className="row-flex" style={{justifyContent: 'center', alignItems: 'center'}}>
+                  <Link to="/"><img src={logo} alt="Logo" /></Link>
+                  <h1>Sitter Space</h1>
+                </div>
                 <div className="row-flex">
                   <div className="header-link">
                     <Link to="/">Home</Link>
