@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MaterialIcon from 'material-icons-react'
-import { Link } from 'react-router-dom'
 
 import './style.css' //link to main css probs
 

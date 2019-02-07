@@ -1,25 +1,51 @@
 import React, { Component } from 'react';
 import './style.css'
+import MaterialIcon from 'material-icons-react'
 
 class Post extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            profilePic: this.props.postData.profile,
+            shown: false
+         }
     }
+
+    handleMouseOver() {
+        this.setState({
+            shown: true
+        })
+    }
+
+    handleMouseExit() {
+        this.setState({
+            shown: false
+        })
+    }
+
     render() { 
         return ( 
-            <div className="post-container row-flex">
-                <div style={{backgroundColor: '#EFEFEF', height: '64px', width: '64px', borderRadius: '36px', marginRight: '16px'}}></div>
-                <div style={{width: '100%'}} >
-                    <h3>{this.props.postData.user}</h3>
-                    <div>{this.props.postData.description}</div>
-                    <div className="row-flex" style={{marginTop:'4px', color: '#a9a9a9', justifyContent: 'space-between', width: '100%'}}>
-                        <span>{this.props.postData.time}</span>
-                        <div>
-                            <span style={{paddingRight: '36px', color:'#A32629'}}>Accept Job</span>
-                            <span style={{color:'#A32629'}} >Send Message</span>
-                        </div>
+            <div className="post-container col-flex" onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.handleMouseExit()}>
+                <div className="row-flex">
+                    <img src={require('../../resources/scamander.jpg')} alt="profile" />
+                    <div>
+                        <h3>{this.props.postData.user}</h3>
+                        <div style={{color: 'grey'}}>Start: {this.props.postData.time}</div>
                     </div>
+                </div>
+                <div className="post-description">
+                    {this.props.postData.description}
+                    <div className={'post-buttons col-flex ' + (this.state.shown ? 'show-buttons' : '') }>
+                    <span>
+                        <button className="icon-button"><MaterialIcon icon="done" size={20} ></MaterialIcon></button>
+                    </span>
+                    <span>
+                        <button className="icon-button"><MaterialIcon icon="message" size={20} ></MaterialIcon></button>
+                    </span>
+                    {/* <span>
+                        <button className="icon-button"><MaterialIcon icon="help" size={20} ></MaterialIcon></button>
+                    </span> */}
+                </div>
                 </div>
             </div>
          );

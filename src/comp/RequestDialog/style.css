@@ -1,0 +1,53 @@
+#request-dialog-background {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: .3;
+}
+
+#dialog-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+
+}
+
+#dialog {
+    padding: 16px;
+    background-color: white;
+    z-index: 15;
+    border-radius: 8px;
+    width: 624px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#dialog-body {
+    padding-top: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#dialog-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
