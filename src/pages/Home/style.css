@@ -22,3 +22,10 @@
     padding: 0 16px;
     overflow-y: auto;
 }
+
+#user-menu img {
+    height: 140px;
+    border-radius: 70px;
+    margin-right: 8px;
+    border: 4px solid white;
+}

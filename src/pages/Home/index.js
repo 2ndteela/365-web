@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import MaterialIcon from 'material-icons-react'
-import {Link} from 'react-router-dom'
 import Post from '../../comp/Post/post'
+import RequestDialog from '../../comp/RequestDialog'
 import './style.css'
 
 
@@ -12,67 +11,23 @@ class Home extends Component {
             filter: 'Newest',
             posts: [
                 {
-                    user: 'Test',
+                    user: 'Newt Scamander',
                     time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
+                    description: 'Looking for someone to watch after my Niffler. I must be on the move for the next two weeks.',
+                    pay: '5 Gallions',
+                    profile: '../../resources/scamander.jpg',
                 },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-                {
-                    user: 'Test',
-                    time: '15 mins',
-                    description: 'Spot needs some walkies',
-                    pay: '$50'
-                },
-            ]
+            ],
+            showNewReq: false
          }
+
+         this.hideReqDialog = this.hideReqDialog.bind(this)
+    }
+
+    hideReqDialog() {
+        this.setState({
+            showNewReq: false
+        })
     }
 
     updateValue(e, data) {
@@ -81,16 +36,22 @@ class Home extends Component {
         })
     }
 
+    showNewRequest() {
+        this.setState({
+            showNewReq: true
+        })
+    }
+
     render() { 
         return ( 
             <div style={{height: '100%'}}>
                 <div className="row-flex" style={{justifyContent: 'space-between', height: '100%'}}>
                     <div className="col-flex" id="user-menu">
-                        <MaterialIcon icon="account_circle" size={140} ></MaterialIcon>
+                        <img src={require('../../resources/zoolander.jpg')} alt="profile"/>
                     </div>
                     <div id="timeline" className="col-flex">
                         <div id="timeline-header" className="row-flex" style={{justifyContent: 'space-between'}}>
-                            <button className="primary-button">New Sitter Request</button>
+                            <button className="primary-button" onClick={() => this.showNewRequest()}>New Sitter Request</button>
                                 <select>
                                     <option value="Newest" >Newest</option>
                                     <option value="Nearest" >Nearest</option>
@@ -105,6 +66,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                <RequestDialog show={this.state.showNewReq} callback={this.hideReqDialog}></RequestDialog>
             </div>
          );
     }

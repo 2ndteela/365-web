@@ -14,7 +14,7 @@
 
 #back-home a {
     font-size: 24px;
-    color: #FF3B3F;
+    color: var(--primary);
 }
 
 .conversation-header {
