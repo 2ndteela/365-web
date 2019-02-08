@@ -18,7 +18,7 @@ class Home extends Component {
                     profile: '../../resources/scamander.jpg',
                 },
             ],
-            showNewReq: false
+            showNewReq: true
          }
 
          this.hideReqDialog = this.hideReqDialog.bind(this)

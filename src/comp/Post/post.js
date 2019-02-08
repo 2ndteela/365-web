@@ -42,9 +42,6 @@ class Post extends Component {
                     <span>
                         <button className="icon-button"><MaterialIcon icon="message" size={20} ></MaterialIcon></button>
                     </span>
-                    {/* <span>
-                        <button className="icon-button"><MaterialIcon icon="help" size={20} ></MaterialIcon></button>
-                    </span> */}
                 </div>
                 </div>
             </div>

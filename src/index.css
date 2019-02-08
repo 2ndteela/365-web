@@ -157,9 +157,10 @@ button:hover {
 }
 
 select {
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 0 18px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0;
+  
 }
 
 .styled-input {
@@ -225,4 +226,12 @@ select {
 .clear-button:hover {
   color: white;
   background-color: red;
+}
+
+.styled-input textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  resize: none;
+  height: 100px;
+  width: 100%;
 }
