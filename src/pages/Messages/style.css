@@ -22,6 +22,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    transition: .2s;
+}
+
+.conversation-header:hover {
+    background-color: #a9a9a9;
 }
 
 .selected {

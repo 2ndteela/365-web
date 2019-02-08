@@ -6,9 +6,37 @@ class Messages extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            messages: [],
+            chats: [{
+                from: 'Jack 0. Lantern',
+                messages: []
+            },
+            {
+                from: 'Testy McTest Face',
+                messages: [],
+                current: true
+            },
+            {
+                from: 'Soime Else',
+                messages: []
+            }
+        ],
          }
     }
+
+    setActive(idx) {
+        const temp = this.state.chats
+
+        temp.forEach(chat => {
+            if(chat.current) chat.current = false
+        })
+
+        temp[idx].current = true
+
+        this.setState({
+            chats: temp
+        })
+    }
+
     render() { 
         return ( 
         <div style={{height: '100%'}} className="row-flex">
@@ -16,17 +44,27 @@ class Messages extends Component {
                 <div id="back-home">
                     <Link to="/" >Home</Link>
                 </div>
-                <div className="conversation-header selected">
-                    <div style={{height: '36px', width: '36px', borderRadius: '18px', backgroundColor: 'grey'}}></div>
-                    <div className="convo-name">Jack O. Lantern</div>
-                </div>
-                <div className="conversation-header">
-                    <div style={{height: '36px', width: '36px', borderRadius: '18px', backgroundColor: 'grey'}}></div>
-                    <div className="convo-name">Testy McTest-face</div>
-                </div>
-                <div className="conversation-header">
-                    <div style={{height: '36px', width: '36px', borderRadius: '18px', backgroundColor: 'grey'}}></div>
-                    <div className="convo-name">Someone Else</div>
+                <div>
+                {
+                    this.state.chats.map((chat, itr) => {
+                        if(chat.current) {
+                            return (
+                            <div className="conversation-header selected">
+                                <div style={{height: '36px', width: '36px', borderRadius: '18px', backgroundColor: 'grey'}}></div>
+                                <div className="convo-name">{chat.from}</div>
+                            </div>
+                            )
+                        }
+                        else {
+                            return(
+                            <div className="conversation-header" onClick={() => this.setActive(itr)}>
+                                <div style={{height: '36px', width: '36px', borderRadius: '18px', backgroundColor: 'grey'}}></div>
+                                <div className="convo-name">{chat.from}</div>
+                            </div>
+                            )
+                        }
+                    })
+                }
                 </div>
             </div>
             <div id="messages">
