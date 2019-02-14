@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MaterialIcon from 'material-icons-react'
 
 import './style.css' //link to main css probs
 
@@ -10,7 +9,9 @@ class Account extends Component {
             name: "Derek Zoolander",
             email: 'Really-really-really-rediculously-good-looking@AOL.net',
             phone: '1-800-hot-land',
-            range: '25 miles'
+            range: '25 miles',
+            about: 'I was once a really famous model. But now I like to watch pets and comtemplate the deeper things in life. Like how to turn left.' +
+            ' or why people are so fast to hate and so slow to love... Anyway, I like bigger animals and especially Llamas.'
         }
     }
 
@@ -45,8 +46,8 @@ class Account extends Component {
                                 <input value={this.state.range} onChange={(e) => this.updateValue(e, 'range')} ></input>
                                 <div>Range - distance you would travel for a job</div>
                             </div>
-                            <div className="styled-textfield">
-                                <textarea></textarea>
+                            <div className="styled-textfield"> 
+                                <textarea value={this.state.about} onChange={(e) => this.updateValue(e, 'about')} ></textarea>
                                 <div>About Me</div>
                             </div>  
                         </div>
