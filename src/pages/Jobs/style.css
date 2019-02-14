@@ -1,4 +1,4 @@
-#messages-menu {
+#jobs-menu {
     background: white;
     margin-right: 8px;
     width: 292px;
@@ -45,7 +45,7 @@
     display: flex;
 }
 
-#message-composer {
+#jobs-composer {
     display: flex;
     width: 100%;
     padding: 8px;

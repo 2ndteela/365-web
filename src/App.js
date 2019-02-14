@@ -4,6 +4,7 @@ import Home from './pages/Home/'
 import Account from './pages/Account'
 import Messages from './pages/Messages'
 import Pets from './pages/Pets'
+import Jobs from './pages/Jobs'
 import Logo from './resources/white-paw.png'
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
               <Route path="/account" component={Account}></Route>
               <Route path="/messages" component={Messages}></Route>
               <Route path="/pets" component={Pets} ></Route>
+              <Route path="/jobs" component={Jobs} ></Route>
             </div>
           </div>
         </Router>
