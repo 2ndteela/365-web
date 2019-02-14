@@ -22,8 +22,18 @@
     widows: 100%;
 }
 .info-divs {
-    width: 600px;
+    /* width: 600px; */
+    width: 75%;
     padding: 16px;
+}
+.notifs{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 16px;
+}
+.kid-notif{
+    width: 25%;
 }
 .notifications{
     width: 200px;
