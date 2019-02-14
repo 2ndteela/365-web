@@ -29,9 +29,9 @@ class App extends Component {
                   <div className="header-link">
                     <Link to="/pets">Pets</Link>
                   </div>
-                  <div className="header-link">
+                  {/* <div className="header-link">
                     <Link to="/jobs">Jobs</Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
