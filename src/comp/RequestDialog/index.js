@@ -31,7 +31,7 @@ class RequestDialog extends Component {
     }
 
     post() {
-
+        this.props.postBack(this.state)
     }
 
     cancel() {
@@ -57,8 +57,8 @@ class RequestDialog extends Component {
                 <div id="dialog" className="col-flex">
                     <div className="row-flex dialog-header">
                         <h3>New Sitter Request</h3>
-                        <button className="icon-button">
-                            <MaterialIcon icon="clear" onClick={() => this.executeCallback()} />
+                        <button className="icon-button" onClick={() => this.executeCallback()}>
+                            <MaterialIcon icon="clear" />
                         </button>
                     </div>
                     <div id="dialog-body">
