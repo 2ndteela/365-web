@@ -1,0 +1,47 @@
+#pets-container {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.pet-card {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding-bottom: 8px;
+    transition: .2s;
+    height: 354px;
+    margin-bottom: 16px;
+}
+
+.pet-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+}   
+
+.pet-card img {
+    width: 100%;
+    padding: 8px;
+}
+
+.add-pet-pic {
+    background-color: lightgray;
+    height: 308px;
+    width: 284px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-pet-pic h1 {
+    color: grey;
+    font-size: 128px;
+}

@@ -27,7 +27,7 @@ class Post extends Component {
         return ( 
             <div className="post-container col-flex" onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.handleMouseExit()}>
                 <div className="row-flex">
-                    <img src={require('../../resources/scamander.jpg')} alt="profile" />
+                    <img src={require('../../resources/' + this.state.profilePic)} alt="profile" onError={() => '../../resources/white-paw.png'} />
                     <div>
                         <h3>{this.props.postData.user}</h3>
                         <div style={{color: 'grey'}}>Start: {this.props.postData.time}</div>
