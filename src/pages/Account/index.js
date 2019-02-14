@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MaterialIcon from 'material-icons-react'
 
 import './style.css' //link to main css probs
 
