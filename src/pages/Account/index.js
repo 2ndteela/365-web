@@ -11,9 +11,10 @@ class Account extends Component {
             email: 'Really-really-really-rediculously-good-looking@AOL.net',
             phone: '1-800-hot-land',
             range: '25 miles',
-            about: 'fashion guy is dumb, but funny',
             emailNotifs: true,
-            phoneNotifs: true
+            phoneNotifs: true,
+            about: 'I was once a really famous model. But now I like to watch pets and comtemplate the deeper things in life. Like how to turn left.' +
+            ' or why people are so fast to hate and so slow to love... Anyway, I like bigger animals and especially Llamas.'
         }
     }
 
