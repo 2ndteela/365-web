@@ -11,6 +11,7 @@ class Account extends Component {
             email: 'Really-really-really-rediculously-good-looking@AOL.net',
             phone: '1-800-hot-land',
             range: '25 miles',
+            about: 'fashion guy is dumb, but funny',
             emailNotifs: true,
             phoneNotifs: true
         }
@@ -60,7 +61,7 @@ class Account extends Component {
                                 <div>Range - distance you would travel for a job</div>
                             </div>
                             <div className="styled-textfield">
-                                <textarea></textarea>
+                                <textarea value={this.state.about} onChange={(e) => this.updateValue(e, 'about')}></textarea>
                                 <div>About Me</div>
                             </div>
                         </div>
