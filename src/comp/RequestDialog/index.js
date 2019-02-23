@@ -10,12 +10,15 @@ class RequestDialog extends Component {
             pet: '',
             salary: '',
             startDate: '',
+            startMonth: '',
+            startYear: '',
             startHour: '',
             startMins: '',
             endDate: '',
             endHour: '',
             endMins: '',
-            description: ''
+            description: '',
+            daysArray: []
         }
 
     }
@@ -60,6 +63,28 @@ class RequestDialog extends Component {
         })
     }
 
+    makeDays() {
+
+    }
+
+    findToday() {
+        const NOW = new Date()
+        this.setState({
+            startYear: NOW.getFullYear(),
+            startMonth: NOW.getMonth() + 1,
+            startDate: NOW.getDate()
+        })
+    }
+
+    updateMonth(e, target) {
+
+    }
+
+    componentDidMount() {
+        this.findToday() 
+        this.makeDays()
+    }
+
     render() {
     if(!this.props.show) return null
     return( 
@@ -91,18 +116,31 @@ class RequestDialog extends Component {
                         <div className="row-flex">
                             <div className="col-flex" style={{justifyContent: 'flex-start', alignItems: 'flex-start'}}>
                                 <h4>Start Time</h4>
-                                <div className="row-flex" style={{width: '98%'}}>
-                                    <div className="styled-input">
-                                        <input value={this.state.startDate} onChange={e => this.updateValue(e, 'startDate')}></input>
-                                        <div>Date</div>
+                                <div className="col-flex" style={{width: '98%'}}>
+                                    <div className="row-flex" style={{width: '100%'}}>
+                                        <div style={{width: '30%'}}>
+                                            <select value={this.state.startYear} onChange={(e) => this.updateValue(e, 'startYear')} style={{width: '100%'}} >
+                                                <option>{this.state.startYear}</option>
+                                                <option>{this.state.startYear + 1}</option>
+                                                <option>{this.state.startYear + 2}</option>
+                                            </select>
+                                        </div>
+                                        <div style={{width: '30%'}}>
+                                            <select style={{width: '100%'}}></select>
+                                        </div>
+                                        <div style={{width: '30%'}}>
+                                            <select style={{width: '100%'}}></select>
+                                        </div>
                                     </div>
-                                    <div className="styled-input">
-                                        <input value={this.state.startHour} onChange={e => this.updateValue(e, 'startHour')}></input>
-                                        <div>Hour</div>
-                                    </div>
-                                    <div className="styled-input">
-                                        <input value={this.state.startMins} onChange={e => this.updateValue(e, 'startMins')} ></input>
-                                        <div>Mins</div>
+                                    <div className="row-flex">
+                                        <div className="styled-input">
+                                            <input value={this.state.startHour} onChange={e => this.updateValue(e, 'startHour')}></input>
+                                            <div>Hour</div>
+                                        </div>
+                                        <div className="styled-input">
+                                            <input value={this.state.startMins} onChange={e => this.updateValue(e, 'startMins')} ></input>
+                                            <div>Mins</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
