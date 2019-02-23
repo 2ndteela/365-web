@@ -21,6 +21,18 @@ class RequestDialog extends Component {
     }
 
     executeCallback() {
+        this.setState({
+            pet: '',
+            salary: '',
+            startDate: '',
+            startHour: '',
+            startMins: '',
+            endDate: '',
+            endHour: '',
+            endMins: '',
+            description: ''
+        })
+        
         this.props.callback()
     }
 

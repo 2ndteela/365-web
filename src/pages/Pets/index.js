@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import './style.css'
 import MaterialIcon from 'material-icons-react'
+import { callbackify } from 'util';
 
 class Pets extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            newPet: {
+                name: 'test',
+                species: '',
+                petPhoto: '',
+                description: ''
+            },
             pets: [
                 {
                     name: 'Miqus',
@@ -24,6 +31,30 @@ class Pets extends Component {
          }
     }
 
+    showImg() {
+        return (
+            <div id="pet-image-preview">
+                Yaya!
+            </div>
+        )
+    }
+
+    showHolder() {
+        return (
+            <div id="pet-image-preview">
+                <span>paste a url and the image preview will show here</span>
+            </div>
+        )
+    }
+
+
+    checkPhoto() {
+        let img = new Image()
+        img.onload =  this.showImg()
+        img.onerror = this.showHolder()
+        img.src = this.state.newPet.petPhoto
+    }
+
     petDialog() {
         if(this.state.showDialog) {
             return (
@@ -37,11 +68,19 @@ class Pets extends Component {
                                 <MaterialIcon icon="clear" />
                             </button>
                         </div>
-                        <div id="dialog-body" style={{flexDirection: 'row'}}>
-                            <div></div>
-                            <div className="styled-input">
-                                <input></input>
-                                <div>Name</div>
+                        <div id="dialog-body" style={{flexDirection: 'column'}}>   
+                            <div className="row-flex" style={{width: '100%'}}>
+                                {this.checkPhoto()}
+                                <div className='col-flex' id="new-pet-inputs" style={{paddingLeft: "8px"}}>
+                                    <div className="styled-input">
+                                        <input value={this.state.newPet.petPhoto} onChange={(e) => this.updateValueNew(e, 'petPhoto')}></input>
+                                        <div>Pet Pic URL</div>
+                                    </div>
+                                    <div className="styled-input">
+                                        <input value={this.state.newPet.name} onChange={(e) => this.updateValueNew(e, 'name') }></input>
+                                        <div>Name</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,6 +99,21 @@ class Pets extends Component {
 
     makeNewPet() {
         this.showDialog = true;
+    }
+
+    updateValue(e, data) {
+        this.setState({
+            [data] : e.target.value
+        })
+    }
+
+    updateValueNew(e, data) {
+        const temp = this.state.newPet
+        temp[data] = e.target.value
+
+        this.setState({
+            newPet: temp
+        })
     }
 
     render() { 

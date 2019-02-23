@@ -45,3 +45,15 @@
     color: grey;
     font-size: 128px;
 }
+
+#pet-image-preview {
+    height: 150px;
+    width: 150px;
+    background-color: lightgray;
+    padding: 8px;
+    border: 1px solid white;
+}
+
+#new-pet-inputs {
+    width: 400px;
+}
