@@ -5,7 +5,12 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    opacity: .3;
+    opacity: 0;
+    transition: .3s;
+}
+
+.fade-in-back {
+    opacity: .3 !important;
 }
 
 #dialog-container {
@@ -27,6 +32,15 @@
     z-index: 15;
     border-radius: 8px;
     width: 624px;
+    position: relative;
+    transition: .3s;
+    opacity: 0;
+    top: 64px;
+}
+
+.no-pacity {
+    opacity: 1 !important;
+    top: 0px !important;
 }
 
 .dialog-header {

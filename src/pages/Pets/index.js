@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './style.css'
 import MaterialIcon from 'material-icons-react'
-import { callbackify } from 'util';
 
 class Pets extends Component {
     constructor(props) {

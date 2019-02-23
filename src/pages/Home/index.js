@@ -29,10 +29,11 @@ class Home extends Component {
         const temp = this.state.posts
         toAdd.user = 'Derek Zoolander'
         toAdd.profile= 'zoolander.jpg'
+        console.log(toAdd)
 
-        const month = parseInt(toAdd.startDate.split('/')[0], 10)
-        const date = parseInt(toAdd.startDate.split('/')[1], 10)
-        const year = parseInt(toAdd.startDate.split('/')[2], 10)
+        const month = parseInt(toAdd.startMonth, 10)
+        const date = parseInt(toAdd.startDate, 10)
+        const year = parseInt(toAdd.startYear, 10)
 
         const hour = parseInt(toAdd.startHour, 10)
         const mins = parseInt(toAdd.startMins, 10)
@@ -52,27 +53,31 @@ class Home extends Component {
         const minsLeft = Math.floor(mSecs/1000/60)
         mSecs -= minsLeft * 1000 * 60 
 
-        console.log(daysLeft, hoursLeft, minsLeft)
-
         if(daysLeft > 1) toAdd.time = daysLeft + ' Days' 
         else if (daysLeft === 1) toAdd.time = daysLeft + ' Day' 
         else if (hoursLeft > 1) toAdd.time = hoursLeft + ' Hours'
-        else if (hoursLeft === 1) toAdd.time = hoursLeft + 'Hour'
+        else if (hoursLeft === 1) toAdd.time = hoursLeft + ' Hour'
         else if (minsLeft >  1) toAdd.time = minsLeft + ' Mins'   
         else toAdd.time = 'Expired'
 
         temp.push(toAdd)
 
         this.setState({
-            posts: temp,
-            showNewReq: false  
+            posts: temp, 
         })
+
+        this.hideReqDialog()
     }
 
     hideReqDialog() {
-        this.setState({
-            showNewReq: false
-        })
+        document.getElementById('dialog').classList.remove('no-pacity')
+        document.getElementById('request-dialog-background').classList.remove('fade-in-back')
+        
+        setTimeout(() => {
+            this.setState({
+                showNewReq: false
+            })
+        }, 300)
     }
 
     updateValue(e, data) {
@@ -85,6 +90,11 @@ class Home extends Component {
         this.setState({
             showNewReq: true
         })
+
+        setTimeout(() => {
+            document.getElementById('dialog').classList.add('no-pacity') 
+            document.getElementById('request-dialog-background').classList.add('fade-in-back')
+        }, 1)
     }
 
     render() { 
@@ -111,7 +121,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <RequestDialog show={this.state.showNewReq} callback={this.hideReqDialog} postBack={this.addPetPost}></RequestDialog>
+                <RequestDialog show={this.state.showNewReq} animate={this.state.showNewReq} callback={this.hideReqDialog} postBack={this.addPetPost}></RequestDialog>
             </div>
          );
     }
