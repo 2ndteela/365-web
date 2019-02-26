@@ -53,7 +53,7 @@ class Account extends Component {
                                     <div>Phone Number</div>
                                 </div>
                                 <div className="kid-notif row-flex">
-                                    <label for="y"><input type="checkbox" id="y" value={this.state.phoneNotifs} onChange={(e) => this.updateValue(e, 'phoneNotifs')} /> Phone Alerts</label>
+                                    <label for="y"><input type="checkbox" defaultChecked="true" id="y" value={this.state.phoneNotifs} onChange={(e) => this.updateValue(e, 'phoneNotifs')} /> Phone Alerts</label>
                                 </div>
                             </div>
                             <div className="styled-input">

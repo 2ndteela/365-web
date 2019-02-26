@@ -48,13 +48,19 @@ class Messages extends Component {
     addMessage = event => {
         var message = this.state.newMessage;
         var newMessage = [{ message: message, sent: true }];
-        console.log("message: " + message);
         const tChats = this.state.chats;
 
         tChats.forEach(chat => {
             if (chat.current) {
                 chat.messages = [...chat.messages, ...newMessage];
+                tChats.newMessage = '';
+                this.setState({
+                    chats: tChats
+                })
             }
+        })
+        this.setState({
+            newMessage:''
         })
     }
     handleKeyPress(e) {
