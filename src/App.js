@@ -17,7 +17,7 @@ class App extends Component {
               <div id="header-content">
                 <div className="row-flex" style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <Link to="/"><img width="50" src={Logo} alt="Logo"></img></Link>
-                  <h1>DogWatch</h1>
+                  <h1>PetSitter</h1>
                 </div>
                 <div className="row-flex">
                   <div className="header-link">
