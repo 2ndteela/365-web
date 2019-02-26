@@ -9,12 +9,12 @@ class Messages extends Component {
         this.state = {
             chats: [{
                 from: 'Jack 0. Lantern',
-                messages: [{ message: "Hey man, thanks for being willing to watch my dog. Looks like you done this before, take care of him eh?", sent: true }, { message: "No problem! Any special needs I should worry about?", sent: false }, { message: "Nah, hes a good doggo. Thanks again, ill venmo you", sent: true }]
+                messages: [{ message: "Hey man, thanks for being willing to watch my dog. Looks like you done this before, take care of him eh?", sent: true }, { message: "No problem! Any special needs I should worry about?", sent: false }, { message: "Nah, hes a good doggo. Thanks again, ill venmo you", sent: true }, {message: "venmo is reunite_outKast_plz", sent: false}],
+                current: true
             },
             {
                 from: 'Testy McTest Face',
                 messages: [{ message: "Just a heads up my dog has 3 heads, like in that harry potter book y'know? Gotta play a harp or something", sent: true }, { message: "Righto chap, cheeky little bugger innit?", sent: false }, { message: "jolly good", sent: true }],
-                current: true
             },
             {
                 from: 'Soime Else',
