@@ -5,6 +5,7 @@
   "dependencies": {
     "firebase": "^5.8.1",
     "material-icons-react": "^1.0.4",
+    "prop-types": "^15.7.2",
     "rc-checkbox": "^2.1.6",
     "react": "^16.7.0",
     "react-chat-bubble": "^0.8.7",
