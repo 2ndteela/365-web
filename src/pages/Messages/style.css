@@ -17,12 +17,47 @@
     color: var(--primary);
 }
 
+#message-input{
+    margin-right: 4px;
+}
+
 .conversation-header {
     padding: 8px 16px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     transition: .2s;
+}
+
+.convo-container{
+    display: flex;
+    background-color: aquamarine;
+    height: 90%;
+    width: 100%;
+    padding: 8px;
+}
+
+.convo-messages{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.sent-message{
+    flex: row;
+    text-align: right;
+    width: 100%;
+}
+
+.rec-message{
+    flex: row;
+    text-align: left;
+    width: 100;
+}
+
+.message-list{
+    width: 100%;
+    margin: 8px;
 }
 
 .conversation-header:hover {
@@ -36,10 +71,6 @@
 
 .convo-name {
     padding-left: 8px;
-}
-
-.input-wrapper {
-
 }
 
 #messages {
@@ -63,3 +94,40 @@
 #message-composer button {
     padding: 8px;
 }
+
+.talkbubble {
+    position: relative;
+    width: 300px;
+    height: 125px;
+    
+    padding: 10px;
+    border-radius: 5px;
+    border: solid lightblue;
+    background: lightblue;
+  }
+  
+  .talkbubble:before {
+    content:"";
+    position: absolute;
+    right: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    
+    border-top: 13px solid transparent;
+    border-right: 26px solid lightblue;
+    border-bottom: 13px solid transparent;
+  }
+  
+  .talkbubble textarea {
+    position: inherit;
+    width: inherit;
+    height: inherit;
+    background: inherit;
+    
+    margin: 0;
+    padding: 0;
+    
+    border: none;
+    resize: none;
+  }

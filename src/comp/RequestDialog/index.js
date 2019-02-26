@@ -8,7 +8,7 @@ class RequestDialog extends Component {
         super(props)
         this.state = {
             pet: '',
-            salary: '',
+            wage: '',
             startDate: '',
             startHour: '',
             startMins: '',
@@ -37,7 +37,7 @@ class RequestDialog extends Component {
     cancel() {
         this.setState({
             pet: '',
-            salary: '',
+            wage: '',
             startDate: '',
             startHour: '',
             startMins: '',
@@ -72,8 +72,8 @@ class RequestDialog extends Component {
                                 <div>Pet</div>
                             </div>
                             <div className="styled-input" style={{position: 'relative', top: '1px'}}>
-                                <input value={this.state.salary} onChange={e => this.updateValue(e, 'salary')}></input>
-                                <div>Salary</div>
+                                <input value={this.state.wage} onChange={e => this.updateValue(e, 'wage')}></input>
+                                <div>Wage</div>
                             </div>
                         </div>
                         <div className="row-flex">
