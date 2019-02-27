@@ -9,7 +9,7 @@ class Messages extends Component {
         this.state = {
             chats: [{
                 from: 'Jack 0. Lantern',
-                messages: [{ message: "Hey man, thanks for being willing to watch my dog. Looks like you done this before, take care of him eh?", sent: true }, { message: "No problem! Any special needs I should worry about?", sent: false }, { message: "Nah, hes a good doggo. Thanks again, ill venmo you", sent: true }, {message: "venmo is reunite_outKast_plz", sent: false}],
+                messages: [{ message: "Hey man, thanks for being willing to watch my dog. Looks like you done this before, take care of him eh?", sent: true }, { message: "No problem! Any special needs I should worry about?", sent: false }, { message: "Nah, hes a good doggo. Thanks again, ill venmo you", sent: true }, { message: "venmo is reunite_outKast_plz", sent: false }],
                 current: true
             },
             {
@@ -39,6 +39,10 @@ class Messages extends Component {
         })
     }
 
+    scrollToBottom() {
+        this.el.scrollIntoView({ behavior: 'smooth' });
+    }
+
     updateValue(e, data) {
         this.setState({
             [data]: e.target.value
@@ -60,14 +64,16 @@ class Messages extends Component {
             }
         })
         this.setState({
-            newMessage:''
+            newMessage: ''
         })
+        this.scrollToBottom();
     }
     handleKeyPress(e) {
         if (e.key === 'Enter') {
             this.addMessage();
         }
     }
+
 
     render() {
         return (
@@ -127,6 +133,7 @@ class Messages extends Component {
                                                     )
                                                 })
                                                 }
+                                                <div id="scroll" ref={el => { this.el = el; }} ></div>
                                             </div>
                                         )
                                     }
@@ -140,7 +147,7 @@ class Messages extends Component {
                         </div>
                     </div>
                     <div id="message-composer">
-                        <input value={this.state.newMessage} onChange={(e) => this.updateValue(e, 'newMessage')} onKeyDown={(e)=>this.handleKeyPress(e)}></input>
+                        <input value={this.state.newMessage} onChange={(e) => this.updateValue(e, 'newMessage')} onKeyDown={(e) => this.handleKeyPress(e)}></input>
                         <button className='primary-button' onClick={() => this.addMessage()}>Send</button>
                     </div>
                 </div>
