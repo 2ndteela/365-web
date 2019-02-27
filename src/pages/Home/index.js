@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import Post from '../../comp/Post/post'
 import RequestDialog from '../../comp/RequestDialog'
+
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 import './style.css'
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             filter: 'Newest',
             posts: [
                 {
@@ -28,7 +32,7 @@ class Home extends Component {
     addPetPost(toAdd) {
         const temp = this.state.posts
         toAdd.user = 'Derek Zoolander'
-        toAdd.profile= 'zoolander.jpg'
+        toAdd.profile = 'zoolander.jpg'
 
         const month = parseInt(toAdd.startDate.split('/')[0], 10)
         const date = parseInt(toAdd.startDate.split('/')[1], 10)
@@ -38,34 +42,34 @@ class Home extends Component {
         const mins = parseInt(toAdd.startMins, 10)
 
         const NOW = new Date()
-        const newDate = new Date(year, month-1, date, hour, mins, 0)
+        const newDate = new Date(year, month - 1, date, hour, mins, 0)
 
         const diff = newDate - NOW
         let mSecs = diff
 
-        const daysLeft = Math.floor(diff/1000/60/60/24)
-        mSecs -= daysLeft*1000*60*60*24
+        const daysLeft = Math.floor(diff / 1000 / 60 / 60 / 24)
+        mSecs -= daysLeft * 1000 * 60 * 60 * 24
 
-        const hoursLeft = Math.floor(mSecs/1000/60/60)
-        mSecs -= hoursLeft*1000*60*60
+        const hoursLeft = Math.floor(mSecs / 1000 / 60 / 60)
+        mSecs -= hoursLeft * 1000 * 60 * 60
 
-        const minsLeft = Math.floor(mSecs/1000/60)
-        mSecs -= minsLeft * 1000 * 60 
+        const minsLeft = Math.floor(mSecs / 1000 / 60)
+        mSecs -= minsLeft * 1000 * 60
 
         console.log(daysLeft, hoursLeft, minsLeft)
 
-        if(daysLeft > 1) toAdd.time = daysLeft + ' Days' 
-        else if (daysLeft === 1) toAdd.time = daysLeft + ' Day' 
+        if (daysLeft > 1) toAdd.time = daysLeft + ' Days'
+        else if (daysLeft === 1) toAdd.time = daysLeft + ' Day'
         else if (hoursLeft > 1) toAdd.time = hoursLeft + ' Hours'
         else if (hoursLeft === 1) toAdd.time = hoursLeft + 'Hour'
-        else if (minsLeft >  1) toAdd.time = minsLeft + ' Mins'   
+        else if (minsLeft > 1) toAdd.time = minsLeft + ' Mins'
         else toAdd.time = 'Expired'
 
         temp.push(toAdd)
 
         this.setState({
             posts: temp,
-            showNewReq: false  
+            showNewReq: false
         })
     }
 
@@ -77,7 +81,7 @@ class Home extends Component {
 
     updateValue(e, data) {
         this.setState({
-            [data] : e.target.value
+            [data]: e.target.value
         })
     }
 
@@ -87,22 +91,22 @@ class Home extends Component {
         })
     }
 
-    render() { 
-        return ( 
-            <div style={{height: '100%'}}>
-                <div className="row-flex" style={{justifyContent: 'space-between', height: '100%'}}>
+    render() {
+        return (
+            <div style={{ height: '100%' }}>
+                <div className="row-flex" style={{ justifyContent: 'space-between', height: '100%' }}>
                     <div className="col-flex" id="user-menu">
-                        <img src={require('../../resources/zoolander.jpg')} alt="profile"/>
+                        <img src={require('../../resources/zoolander.jpg')} alt="profile" />
                     </div>
                     <div id="timeline" className="col-flex">
-                        <div id="timeline-header" className="row-flex" style={{justifyContent: 'space-between'}}>
+                        <div id="timeline-header" className="row-flex" style={{ justifyContent: 'space-between' }}>
                             <button className="primary-button" onClick={() => this.showNewRequest()}>New Sitter Request</button>
-                                <select>
-                                    <option value="Newest" >Newest</option>
-                                    <option value="Nearest" >Nearest</option>
-                                    <option value="Paid" >Paid</option>
-                                    <option value="Urgent" >Urgent</option>
-                                </select>
+                            <select>
+                                <option value="Newest" >Newest</option>
+                                <option value="Nearest" >Nearest</option>
+                                <option value="Paid" >Paid</option>
+                                <option value="Urgent" >Urgent</option>
+                            </select>
                         </div>
                         <div id="posts">
                             {this.state.posts.map((p, itr) => (
@@ -113,8 +117,8 @@ class Home extends Component {
                 </div>
                 <RequestDialog show={this.state.showNewReq} callback={this.hideReqDialog} postBack={this.addPetPost}></RequestDialog>
             </div>
-         );
+        );
     }
 }
- 
+
 export default Home;

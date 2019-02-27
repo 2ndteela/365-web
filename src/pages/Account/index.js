@@ -11,11 +11,11 @@ class Account extends Component {
             email: 'Really-really-really-rediculously-good-looking@AOL.net',
             phone: '1-800-hot-land',
             range: '25 miles',
-            location: 'a city for ants',
+            location: 'City For Ants, Utah, 84606',
             emailNotifs: true,
             phoneNotifs: true,
             about: 'I was once a really famous model. But now I like to watch pets and contemplate the deeper things in life. Like how to turn left.' +
-            ' or why people are so fast to hate and so slow to love... Anyway, I like bigger animals and especially Llamas.'
+                ' or why people are so fast to hate and so slow to love... Anyway, I like bigger animals and especially Llamas.'
         }
     }
 
@@ -40,12 +40,11 @@ class Account extends Component {
                             </div>
                             <div className="notifs">
                                 <div className="styled-input">
-                                    <input value={this.state.email} onChange={(e) => this.updateValue(e, 'email')}></input>
+                                    <input value={this.state.email} id="x" onChange={(e) => this.updateValue(e, 'email')}></input>
                                     <div>Email</div>
                                 </div>
-                                <div className="kid-notif row-flex">
-                                    <input type="checkbox" value={this.state.emailNotifs} onChange={(e) => this.updateValue(e, 'emailNotifs')} />
-                                    <div>Email Alerts</div>
+                                <div className="kid-notif">
+                                    <label for="x"><input type="checkbox" id="x" value={this.state.emailNotifs} onChange={(e) => this.updateValue(e, 'emailNotifs')} /> Email Alerts</label>
                                 </div>
                             </div>
                             <div className="notifs">
@@ -54,18 +53,17 @@ class Account extends Component {
                                     <div>Phone Number</div>
                                 </div>
                                 <div className="kid-notif row-flex">
-                                    <input type="checkbox" value={this.state.phoneNotifs} onChange={(e) => this.updateValue(e, 'phoneNotifs')} />
-                                    <div>Phone Alerts</div>
+                                    <label for="y"><input type="checkbox" defaultChecked="true" id="y" value={this.state.phoneNotifs} onChange={(e) => this.updateValue(e, 'phoneNotifs')} /> Phone Alerts</label>
                                 </div>
                             </div>
                             <div className="styled-input">
                                 <input value={this.state.range} onChange={(e) => this.updateValue(e, 'range')} ></input>
                                 <div>Range - distance you would travel for a job</div>
                             </div>
-                            {/* <div className="styled-input">
-                                <input value={this.state.range} onChange={(e) => this.updateValue(e, 'location')} ></input>
+                            <div className="styled-input">
+                                <input value={this.state.location} onChange={(e) => this.updateValue(e, 'location')} ></input>
                                 <div>Location - used to find people near you</div>
-                            </div> */}
+                            </div>
                             <div className="styled-textfield">
                                 <textarea value={this.state.about} onChange={(e) => this.updateValue(e, 'about')}></textarea>
                                 <div>About Me</div>

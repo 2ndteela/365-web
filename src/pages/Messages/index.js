@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import ChatBubble from 'react-chat-bubble';
 // import { Link } from 'react-router-dom'
 import './style.css'
 
-//messages [] is a stack
+//chats [] is a stack
 class Messages extends Component {
     constructor(props) {
         super(props);
         this.state = {
             chats: [{
                 from: 'Jack 0. Lantern',
-                messages: [{ text: "hey", sent: true }, { message: "hEy", sent: false }]
-            },
-            {
-                from: 'Testy McTest Face',
-                messages: [{ message: "sup bruh", sent: true }, { message: "SuP bRuH", sent: false }],
+                messages: [{ message: "Hey man, thanks for being willing to watch my dog. Looks like you done this before, take care of him eh?", sent: true }, { message: "No problem! Any special needs I should worry about?", sent: false }, { message: "Nah, hes a good doggo. Thanks again, ill venmo you", sent: true }, { message: "venmo is reunite_outKast_plz", sent: false }],
                 current: true
             },
             {
+                from: 'Testy McTest Face',
+                messages: [{ message: "Just a heads up my dog has 3 heads, like in that harry potter book y'know? Gotta play a harp or something", sent: true }, { message: "Righto chap, cheeky little bugger innit?", sent: false }, { message: "jolly good", sent: true }],
+            },
+            {
                 from: 'Soime Else',
-                messages: [{ message: "can you dogsit for me?", sent: true }, { message: "cAn YoU dOgSiT fOr mE?", sent: false }]
+                messages: [{ message: "can you dogsit for me?", sent: true }, { message: "cAn YoU dOgSiT fOr mE?", sent: false }, { message: "blocked and reported", sent: true }]
             }
             ],
+            newMessage: ''
         }
     }
 
@@ -39,11 +39,41 @@ class Messages extends Component {
         })
     }
 
+    scrollToBottom() {
+        this.el.scrollIntoView({ behavior: 'smooth' });
+    }
+
     updateValue(e, data) {
         this.setState({
             [data]: e.target.value
         })
     }
+
+    addMessage = event => {
+        var message = this.state.newMessage;
+        var newMessage = [{ message: message, sent: true }];
+        const tChats = this.state.chats;
+
+        tChats.forEach(chat => {
+            if (chat.current) {
+                chat.messages = [...chat.messages, ...newMessage];
+                tChats.newMessage = '';
+                this.setState({
+                    chats: tChats
+                })
+            }
+        })
+        this.setState({
+            newMessage: ''
+        })
+        this.scrollToBottom();
+    }
+    handleKeyPress(e) {
+        if (e.key === 'Enter') {
+            this.addMessage();
+        }
+    }
+
 
     render() {
         return (
@@ -51,7 +81,10 @@ class Messages extends Component {
                 <div id="messages-menu">
                     <div id="back-home">
                         {/* <Link to="/" >Home</Link> */}
-                        <h2>Messages</h2>
+                        <div className="alt-h2">Messages</div>
+                    </div>
+                    <div id="line">
+                        <center><hr width="90%"></hr></center>
                     </div>
                     <div>
                         {
@@ -87,12 +120,12 @@ class Messages extends Component {
                                                 {chat.messages.map((message) => {
                                                     if (message.sent) {
                                                         return (
-                                                            <div className="sent-message">{message.message}</div>
+                                                            <div className="row w-100"><div className="speech-bubble sent-message">{message.message}</div></div>
                                                         )
                                                     }
                                                     else if (!message.sent) {
                                                         return (
-                                                            <div className="rec-message">{message.message}</div>
+                                                            <div className="row w-100"><div className="speech-bubble rec-message">{message.message}</div></div>
                                                         )
                                                     }
                                                     return (
@@ -100,6 +133,7 @@ class Messages extends Component {
                                                     )
                                                 })
                                                 }
+                                                <div id="scroll" ref={el => { this.el = el; }} ></div>
                                             </div>
                                         )
                                     }
@@ -113,8 +147,8 @@ class Messages extends Component {
                         </div>
                     </div>
                     <div id="message-composer">
-                        <input id="message-input"></input>
-                        <button className='primary-button' onChange={(e) => this.updateValue(e, 'messages')}>Send</button>
+                        <input value={this.state.newMessage} onChange={(e) => this.updateValue(e, 'newMessage')} onKeyDown={(e) => this.handleKeyPress(e)}></input>
+                        <button className='primary-button' onClick={() => this.addMessage()}>Send</button>
                     </div>
                 </div>
             </div>
