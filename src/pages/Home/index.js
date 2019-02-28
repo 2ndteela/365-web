@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             filter: 'Newest',
             posts: [
                 {
@@ -136,19 +136,19 @@ class Home extends Component {
         const mins = parseInt(toAdd.startMins, 10)
 
         const NOW = new Date()
-        const newDate = new Date(year, month-1, date, hour, mins, 0)
+        const newDate = new Date(year, month - 1, date, hour, mins, 0)
 
         const diff = newDate - NOW
         let mSecs = diff
 
-        const daysLeft = Math.floor(diff/1000/60/60/24)
-        mSecs -= daysLeft*1000*60*60*24
+        const daysLeft = Math.floor(diff / 1000 / 60 / 60 / 24)
+        mSecs -= daysLeft * 1000 * 60 * 60 * 24
 
-        const hoursLeft = Math.floor(mSecs/1000/60/60)
-        mSecs -= hoursLeft*1000*60*60
+        const hoursLeft = Math.floor(mSecs / 1000 / 60 / 60)
+        mSecs -= hoursLeft * 1000 * 60 * 60
 
-        const minsLeft = Math.floor(mSecs/1000/60)
-        mSecs -= minsLeft * 1000 * 60 
+        const minsLeft = Math.floor(mSecs / 1000 / 60)
+        mSecs -= minsLeft * 1000 * 60
 
         if(daysLeft > 1) toAdd.time = daysLeft + ' Days' 
         else if (daysLeft === 1) toAdd.time = daysLeft + ' Day' 
@@ -178,7 +178,7 @@ class Home extends Component {
 
     updateValue(e, data) {
         this.setState({
-            [data] : e.target.value
+            [data]: e.target.value
         })
     }
 
@@ -227,12 +227,12 @@ class Home extends Component {
         })
     }
 
-    render() { 
-        return ( 
-            <div style={{height: '100%'}}>
-                <div className="row-flex" style={{justifyContent: 'space-between', height: '100%'}}>
+    render() {
+        return (
+            <div style={{ height: '100%' }}>
+                <div className="row-flex" style={{ justifyContent: 'space-between', height: '100%' }}>
                     <div className="col-flex" id="user-menu">
-                        <img src={require('../../resources/zoolander.jpg')} alt="profile"/>
+                        <img src={require('../../resources/zoolander.jpg')} alt="profile" />
                     </div>
                     <div id="timeline" className="col-flex">
                         <div className="row-flex" style={{justifyContent: 'space-between', width: '100%', padding: '16px'}}>
@@ -277,8 +277,8 @@ class Home extends Component {
                 </div>
                 <RequestDialog show={this.state.showNewReq} callback={this.hideReqDialog} postBack={this.addPetPost}></RequestDialog>
             </div>
-         );
+        );
     }
 }
- 
+
 export default Home;

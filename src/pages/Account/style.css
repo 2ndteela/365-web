@@ -33,7 +33,10 @@
     padding-bottom: 16px;
 }
 .kid-notif{
+    display: flex;
     width: 25%;
+    margin: auto;
+    padding-left: 8px;
 }
 .notifications{
     width: 200px;

@@ -34,7 +34,7 @@ class RequestDialog extends Component {
 
         this.setState({
             pet: '',
-            salary: '',
+            wage: '',
             startDate: '',
             startHour: '',
             startMins: '',
