@@ -46,9 +46,14 @@
     flex-direction: row;
     width: 100%;
     overflow: auto;
+    height: 120px;
     background-color: white;
-    border-radius: 5px;
-    padding-bottom: 32px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.h-fit{
+    height: 35px;
 }
 
 .my-post-chip {

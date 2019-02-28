@@ -63,7 +63,7 @@ class Home extends Component {
                     pet: 'Miqus',
                     time: '7 Days',
                     img: 'https://www.ctvsh.com/sites/default/files/styles/large/adaptive-image/public/siberian-husky-dog-breed-info.jpg?itok=Mp4QXlOs',
-                    description: "Miqus needs some walkies"
+                    description: "Miqus needs walkies"
                 },
                 {
                     pet: 'Mrs. Scratchers',
@@ -214,7 +214,7 @@ class Home extends Component {
                     <div id="timeline" className="col-flex">
                         <div className="row-flex" id="my-listings-header">
                             <h3 style={{margin: 0}} >My Listings</h3>
-                            <button onClick={() => this.showNewRequest()} className="primary-button">New Listing</button>
+                            <button onClick={() => this.showNewRequest()} className="primary-button h-fit">New Listing</button>
                         </div>
                         <div id="my-posts">
                             {this.state.myPosts.map((post, itr) => {
