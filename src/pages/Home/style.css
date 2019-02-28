@@ -46,8 +46,9 @@
     flex-direction: row;
     width: 100%;
     overflow: auto;
-    height: 120px;
+    height: 128px;
     background-color: white;
+    padding-bottom: 24px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
