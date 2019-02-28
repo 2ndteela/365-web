@@ -46,7 +46,7 @@ class Post extends Component {
                     <div>
                         <h3>{this.props.postData.user}<span> - {this.props.postData.pet}</span></h3>
                         <div className="col-flex" style={{color: 'grey', alignItems: 'flex-start'}}>
-                            <span>Start: {this.props.postData.time}</span>
+                            <span>Starts in {this.props.postData.time}</span>
                             <span>{this.payment()}</span>
                         </div>
                     </div>
