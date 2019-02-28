@@ -98,28 +98,6 @@ class Home extends Component {
          this.acceptJob = this.acceptJob.bind(this)
     }
 
-    resetModal() {
-        const temp = {
-            pet: 'Miqus',
-            salary: '',
-            startDate: '',
-            startMonth: '',
-            startYear: 2018,
-            startHour: 8,
-            startMins: 0,
-            endDate: '',
-            endMonth: '',
-            endYear: 2019,
-            endHour: 10,
-            endMins: 0,
-            description: '',
-        }
-
-        this.setState({
-            editData: temp
-        })
-    }
-
     addPetPost(toAdd) {
         const temp = this.state.myPosts
         toAdd.user = 'Derek Zoolander'
@@ -172,8 +150,7 @@ class Home extends Component {
                 showNewReq: false,
                 toEdit: null
             })
-            this.resetModal()
-        }, 300)
+        }, 1)
     }
 
     updateValue(e, data) {
@@ -204,8 +181,8 @@ class Home extends Component {
     }
 
     shortDes(des) {
-        if(des.length > 20) {
-            const temp = des.substr(0, 20) + "..."
+        if(des.length > 16) {
+            const temp = des.substr(0, 16) + "..."
             return <div className="chip-description" >{temp}</div>
         }
         else return <div className="chip-description" >{des}</div>
@@ -235,7 +212,7 @@ class Home extends Component {
                         <img src={require('../../resources/zoolander.jpg')} alt="profile" />
                     </div>
                     <div id="timeline" className="col-flex">
-                        <div className="row-flex" style={{justifyContent: 'space-between', width: '100%', padding: '16px'}}>
+                        <div className="row-flex" id="my-listings-header">
                             <h3 style={{margin: 0}} >My Listings</h3>
                             <button onClick={() => this.showNewRequest()} className="primary-button">New Listing</button>
                         </div>

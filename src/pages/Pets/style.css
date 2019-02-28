@@ -1,11 +1,12 @@
 #pets-container {
     background-color: white;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     padding: 16px;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
     overflow: auto;
+    align-items: flex-start;
 }
 
 .pet-card {
@@ -17,7 +18,6 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     padding-bottom: 8px;
     transition: .2s;
-    height: 354px;
     margin-bottom: 16px;
 }
 
@@ -46,14 +46,6 @@
     font-size: 128px;
 }
 
-#pet-image-preview {
-    height: 150px;
-    width: 150px;
-    background-color: lightgray;
-    padding: 8px;
-    border: 1px solid white;
-}
-
 #new-pet-inputs {
-    width: 400px;
+    width: 386px;
 }
