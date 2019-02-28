@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style.css'
 import MaterialIcon from 'material-icons-react'
+import { Link } from 'react-router-dom';
 
 class Post extends Component {
     constructor(props) {
@@ -12,24 +13,31 @@ class Post extends Component {
     }
 
     handleMouseOver() {
-        this.setState({
-            shown: true
-        })
+            this.setState({
+                shown: true
+            })
     }
 
     handleMouseExit() {
-        this.setState({
-            shown: false
-        })
+        if(this.state.shown) {
+            this.setState({
+                shown: false
+            })
+        }
     }
+    acceptJob() {
+        this.props.callBack(this.props.idx)
+    }
+  
+
 
     render() { 
         return ( 
-            <div className="post-container col-flex" onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.handleMouseExit()}>
+            <div className={(this.props.postData.accepted ? 'job-gone ' : '') +  " post-container col-flex"}  onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.handleMouseExit()}>
                 <div className="row-flex">
                     <img src={require('../../resources/' + this.state.profilePic)} alt="profile" onError={() => '../../resources/white-paw.png'} />
                     <div>
-                        <h3>{this.props.postData.user}</h3>
+                        <h3>{this.props.postData.user}<span> - {this.props.postData.pet}</span></h3>
                         <div style={{color: 'grey'}}>Start: {this.props.postData.time}</div>
                     </div>
                 </div>
@@ -37,10 +45,10 @@ class Post extends Component {
                     {this.props.postData.description}
                     <div className={'post-buttons col-flex ' + (this.state.shown ? 'show-buttons' : '') }>
                     <span>
-                        <button className="icon-button"><MaterialIcon icon="done" size={20} ></MaterialIcon></button>
+                        <button className="icon-button" onClick={() => this.acceptJob()}><MaterialIcon icon="done" size={20} ></MaterialIcon></button>
                     </span>
                     <span>
-                        <button className="icon-button"><MaterialIcon icon="message" size={20} ></MaterialIcon></button>
+                        <Link to='/messages'><button className="icon-button" ><MaterialIcon icon="message" size={20} ></MaterialIcon></button></Link>
                     </span>
                 </div>
                 </div>

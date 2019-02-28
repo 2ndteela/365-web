@@ -11,6 +11,7 @@
 :root {
   --primary: #2de1fc;
   --secondary: #0075F2;
+  
 }
 
 body {
@@ -234,4 +235,29 @@ select {
   resize: none;
   height: 100px;
   width: 100%;
+}
+
+.styled-input select {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightgray; 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
 }
