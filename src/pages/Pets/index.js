@@ -26,7 +26,7 @@ class Pets extends Component {
                     description: "Spot doesn't actually have any spots... Don't know why we call him that. He's an Alpaca, not a llama."
                 }
             ],
-            showDialog: true
+            showDialog: false
          }
     }
 
