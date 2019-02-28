@@ -29,6 +29,13 @@ class Post extends Component {
         this.props.callBack(this.props.idx)
     }
   
+    payment() {
+        const amount = this.props.postData.salary 
+        if(amount) {
+            return amount
+        }
+        else return "No payment offered"
+    }
 
 
     render() { 
@@ -38,11 +45,14 @@ class Post extends Component {
                     <img src={require('../../resources/' + this.state.profilePic)} alt="profile" onError={() => '../../resources/white-paw.png'} />
                     <div>
                         <h3>{this.props.postData.user}<span> - {this.props.postData.pet}</span></h3>
-                        <div style={{color: 'grey'}}>Start: {this.props.postData.time}</div>
+                        <div className="col-flex" style={{color: 'grey', alignItems: 'flex-start'}}>
+                            <span>Start: {this.props.postData.time}</span>
+                            <span>{this.payment()}</span>
+                        </div>
                     </div>
                 </div>
                 <div className="post-description">
-                    {this.props.postData.description}
+                    <div style={{paddingBottom: '8px'}}>{this.props.postData.description}</div>
                     <div className={'post-buttons col-flex ' + (this.state.shown ? 'show-buttons' : '') }>
                     <span>
                         <button className="icon-button" onClick={() => this.acceptJob()}><MaterialIcon icon="done" size={20} ></MaterialIcon></button>

@@ -15,7 +15,7 @@ class Home extends Component {
                     user: 'Newt Scamander',
                     time: '15 mins',
                     description: 'Looking for someone to watch after my Niffler. I must be on the move for the next two weeks.',
-                    pay: '5 Gallions',
+                    salary: '',
                     profile: 'scamander.jpg',
                     pet: 'Niffler'
                 },
@@ -23,7 +23,7 @@ class Home extends Component {
                     user: 'Martha Stewart',
                     time: '3 Days',
                     description: 'Would anyone like to watch my lab over the weekend? She is the sweetest!',
-                    pay: '700 Dollars',
+                    salary: '700 Dollars',
                     profile: 'martha.jpg',
                     pet: 'Golden'
                 },
@@ -31,7 +31,7 @@ class Home extends Component {
                     user: 'Link',
                     time: '1 Weeks',
                     description: 'Ponita needs to be taken out a least once a day next week as I go to battle the greatest evil of all',
-                    pay: '1000 Rupees',
+                    salary: '1000 Rupees',
                     profile: 'link.png',
                     pet: 'Ponita'
                 },
@@ -39,7 +39,7 @@ class Home extends Component {
                     user: 'Elon Musk',
                     time: '2 Weeks',
                     description: 'I need a new pet tiger feeder becuase... reasons',
-                    pay: '1,000,000 Dollars',
+                    salary: '1,000,000 Dollars',
                     profile: 'elon.jpg',
                     pet: 'Trina'
                 },
@@ -47,7 +47,7 @@ class Home extends Component {
                     user: 'Terry Crews',
                     time: '2 Days',
                     description: 'Hey, could someone watch my parrot while I go for my next photo shoot?',
-                    pay: '5,000 Dollars',
+                    salary: '5,000 Dollars',
                     profile: 'crews.jpg',
                     pet: 'Echo'
                 },
