@@ -38,6 +38,10 @@
     padding-left: 8px;
 }
 
+.input-wrapper {
+
+}
+
 #messages {
     background-color: white;
     width: 724px;
