@@ -29,8 +29,6 @@ class Pets extends Component {
             showDialog: true
          }
     }
-    }
-
 
     petDialog() {
         if(this.state.showDialog) {
