@@ -33,6 +33,7 @@ class Jobs extends Component {
                 </div>
                 <div id="jobs">
                     <div id="jobs-composer">
+                        <h1>Jobs page yet to do</h1>
                     </div>
                 </div>
             </div>

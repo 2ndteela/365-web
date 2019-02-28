@@ -7,16 +7,16 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    left: 0;
+    max-height: 120px;
     overflow-x: hidden;
+    transition: .5s;
 }
 
 .post-container img {
     height: 48px;
     border-radius: 24px;
     margin-right: 16px;
-}
-
-.post-container h3 {
 }
 
 .post-description {
@@ -37,3 +37,18 @@
 .show-buttons {
     right: 8px !important;
 }
+
+.post-container h3 span {
+    color: lightgray;
+    font-size: 16px;
+}
+
+.job-gone {
+    left: 100vw !important;
+    max-height: 0px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none;
+}
+

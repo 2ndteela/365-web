@@ -6,25 +6,24 @@ class RequestDialog extends Component {
 
     constructor(props) {
         super(props)
+        const NOW = new Date()
         this.state = {
-            pet: '',
+            pet: 'Miqus',
             salary: '',
-            startDate: '',
-            startMonth: '',
-            startYear: '',
-            startHour: 6,
+            startDate: NOW.getDate(),
+            startMonth: NOW.getMonth(),
+            startYear: 2019,
+            startHour: NOW.getHours() + 1,
             startMins: 0,
-            endDate: '',
-            endMonth: '',
-            endYear: '',
-            endHour: 8,
+            endDate: NOW.getDate(),
+            endMonth: NOW.getMonth(),
+            endYear: 2019,
+            endHour: NOW.getHours() + 3,
             endMins: 0,
             description: '',
             startDaysArray: [],
             endDaysArray: [],
-            animate: false
         }
-
     }
 
     executeCallback() {
@@ -58,21 +57,27 @@ class RequestDialog extends Component {
     }
 
     post() {
+        document.getElementById('dialog').classList.remove('no-pacity')
+        document.getElementById('request-dialog-background').classList.remove('fade-in-back')
+        this.cancel()
         this.props.postBack(this.state)
     }
 
     cancel() {
+        const NOW = new Date()
         this.setState({
-            pet: '',
+            pet: 'Miqus',
             salary: '',
-            startDate: '',
-            startHour: '',
-            startMins: '',
-            endDate: '',
-            endHour: '',
-            endMins: '',
+            startDate: NOW.getDate(),
+            startHour: NOW.getHours() + 1,
+            startMins: 0,
+            startYear: 2019,
+            endYear: 2019,
+            endDate: NOW.getDate(),
+            endHour: NOW.getHours() + 3,
+            endMins: 0,
             description: ''
-        })
+        }, this.findToday)
     }
 
     makeStartDays() {
@@ -111,18 +116,20 @@ class RequestDialog extends Component {
             startYear: NOW.getFullYear(),
             startMonth: NOW.getMonth() + 1,
             startDate: NOW.getDate(),
-            endDate: NOW.getDate() + 1,
+            endDate: NOW.getDate(),
             endMonth: NOW.getMonth() + 1,
             endYear: NOW.getFullYear()
+        }, () => {
+            this.makeStartDays()
+            this.makeEndDays()
         })
-        this.makeStartDays()
-        this.makeEndDays()
     }
 
     updateMonth(e, start) {
         if(start) {
             this.setState({
-                startMonth: e.target.value
+                startMonth: e.target.value,
+                endMonth: this.state.endMonth < e.target.value ? e.target.value : this.state.endMonth
             }, this.makeStartDays)
         }
         else {
@@ -162,7 +169,7 @@ class RequestDialog extends Component {
                             </div>
                             <div className="styled-input" style={{position: 'relative', top: '1px'}}>
                                 <input value={this.state.salary} onChange={e => this.updateValue(e, 'salary')}></input>
-                                <div>Salary</div>
+                                <div>Wage</div>
                             </div>
                         </div>
                         <div className="row-flex" style={{ width: '100%', justifyContent: 'space-between'}}>
@@ -171,7 +178,7 @@ class RequestDialog extends Component {
                                 <div className="col-flex" style={{width: '100%'}}>
                                     <div className="row-flex" style={{width: '100%'}}>
                                         <div style={{width: '33%'}} className="styled-input">
-                                            <select value={this.state.startMonth} onChange={(e) => this.updateMonth(e, true)} style={{width: '100%'}}>
+                                            <select value={this.state.startMonth} defaultValue={this.state.startMonth} onChange={(e) => this.updateMonth(e, true)} style={{width: '100%'}}>
                                                 <option value={1}>Jan</option>
                                                 <option value={2}>Feb</option>
                                                 <option value={3}>Mar</option>
@@ -188,23 +195,23 @@ class RequestDialog extends Component {
                                             <div>Month</div>
                                         </div>
                                         <div style={{width: '33%'}} className="styled-input">
-                                            <select value={this.state.startDate} onChange={(e) => this.updateValue(e, 'startDate')} style={{width: '100%'}}>
+                                            <select value={this.state.startDate} defaultValue={this.state.startDate} onChange={(e) => this.updateValue(e, 'startDate')} style={{width: '100%'}}>
                                                 {this.state.startDaysArray.map(day => <option key={day + ' day'} >{day}</option>)}
                                             </select>
                                             <div>Date</div>
                                         </div>
                                         <div style={{width: '34%'}} className="styled-input">
-                                        <select value={this.state.startYear} onChange={(e) => this.updateValue(e, 'startYear')} style={{width: '100%'}} >
-                                                <option>{this.state.startYear}</option>
-                                                <option>{this.state.startYear + 1}</option>
-                                                <option>{this.state.startYear + 2}</option>
+                                        <select value={this.state.startYear} defaultValue={2019} onChange={(e) => this.updateValue(e, 'startYear')} style={{width: '100%'}} >
+                                                <option>2019</option>
+                                                <option>2020</option>
+                                                <option>2021</option>
                                             </select>
                                             <div>Year</div>
                                         </div>
                                     </div>
                                     <div className="row-flex" style={{width: '100%'}} >
                                         <div className="styled-input">
-                                            <select value={this.state.startHour} onChange={e => this.updateValue(e, 'startHour')}>
+                                            <select value={this.state.startHour} defaultValue={this.state.startHour} onChange={e => this.updateValue(e, 'startHour')}>
                                                 <option value={6}>6am</option>
                                                 <option value={7}>7am</option>
                                                 <option value={8}>8am</option>
