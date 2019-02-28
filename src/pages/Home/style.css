@@ -37,6 +37,11 @@
     flex-direction: row;
     width: 100%;
     overflow: auto;
+    height: 120px;
+}
+
+.h-fit{
+    height: 35px;
 }
 
 .my-post-chip {
