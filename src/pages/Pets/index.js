@@ -37,6 +37,27 @@ class Pets extends Component {
          }
     }
 
+    petCard(pet) {
+        return (
+            <div className='pet-card' key={pet.name + '-pet'}>
+                <button className="icon-button abs" onClick={() => this.removePet(pet)} ><MaterialIcon icon="clear"></MaterialIcon></button>
+                <img src={pet.petPhoto} alt={pet.name} />
+                <h3>{pet.name}</h3>
+        </div>)
+    }
+
+    removePet(pet) {
+        const temp = this.state.pets
+        let newArr = []
+        temp.forEach(p => {
+            if(p.name !== pet.name) newArr.push(p)
+        })
+
+        this.setState({
+            pets: newArr
+        }, this.mapPets)
+    }
+
     petDialog() {
         if(this.state.showDialog) {
             return (
@@ -192,30 +213,17 @@ class Pets extends Component {
             <div className="row-flex" style={{justifyContent: 'space-between', width: '100%', flexWrap: 'wrap'}}>
                 <div className="col-flex">
                     {this.state.mappedArrays[0].map((pet, itr) => {
-                        return (
-                        <div className='pet-card' key={pet.name + '-pet'}>
-                            <img src={pet.petPhoto} alt={pet.name} />
-                            <h3>{pet.name}</h3>
-                        </div>)
+                        return this.petCard(pet)
                     })}
                 </div>
                 <div className="col-flex">
                     {this.state.mappedArrays[1].map((pet) => {
-                        return (
-                        <div className='pet-card' key={pet.name + '-pet'}>
-                            <img src={pet.petPhoto} alt={pet.name} />
-                            <h3>{pet.name}</h3>
-                        </div>)
+                        return this.petCard(pet)
                     })}
                 </div>
                 <div className="col-flex">
                     {this.state.mappedArrays[2].map((pet) => {
-                        return (
-                        <div className='pet-card' key={pet.name + '-pet'}>
-                            <img src={pet.petPhoto} alt={pet.name} />
-                            <h3>{pet.name}</h3>
-                        </div>)
-
+                        return this.petCard(pet)
                     })}</div>
                 </div>
             </div>

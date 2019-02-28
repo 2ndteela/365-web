@@ -19,6 +19,7 @@
     padding-bottom: 8px;
     transition: .2s;
     margin-bottom: 16px;
+    position: relative;
 }
 
 .pet-card:hover {
@@ -48,4 +49,15 @@
 
 #new-pet-inputs {
     width: 386px;
+}
+
+.abs {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    display: none;
+}
+
+.pet-card:hover .abs {
+    display: block;
 }
